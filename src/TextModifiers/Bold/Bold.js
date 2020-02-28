@@ -1,9 +1,6 @@
-import "./Bold.css";
-import { toggleClass } from "../../utils";
-
 const BoldModifier = {
-  applyModifier: classes => {
-    toggleClass(classes, "bold");
+  trigger: () => {
+    document.execCommand("bold");
   }
 };
 export default BoldModifier;

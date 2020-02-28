@@ -1,9 +1,6 @@
-import "./Italic.css";
-import { toggleClass } from "../../utils";
-
-const ItalicModifier = {
-  applyModifier: classes => {
-    toggleClass(classes, "italic");
+const BoldModifier = {
+  trigger: () => {
+    document.execCommand("italic");
   }
 };
-export default ItalicModifier;
+export default BoldModifier;

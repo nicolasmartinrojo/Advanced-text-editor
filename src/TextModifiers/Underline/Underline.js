@@ -1,9 +1,6 @@
-import "./Underline.css";
-import { toggleClass } from "../../utils";
-
-const UnderlineModifier = {
-  applyModifier: classes => {
-    toggleClass(classes, "underline");
+const BoldModifier = {
+  trigger: () => {
+    document.execCommand("underline");
   }
 };
-export default UnderlineModifier;
+export default BoldModifier;

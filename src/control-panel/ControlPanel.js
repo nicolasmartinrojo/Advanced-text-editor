@@ -1,36 +1,27 @@
-import React, { Component } from "react";
+import React from "react";
 import "./ControlPanel.css";
+import ControlButton from "./ControlButton";
 
-class ControlPanel extends Component {
-  render() {
-    return (
-      <div id="control-panel">
-        <div id="format-actions">
-          <button
-            className="format-action"
-            type="button"
-            onClick={() => this.props.clickOnBold()}
-          >
-            <b>B</b>
-          </button>
-          <button
-            className="format-action"
-            type="button"
-            onClick={() => this.props.clickOnItalic()}
-          >
-            <i>I</i>
-          </button>
-          <button
-            className="format-action"
-            type="button"
-            onClick={() => this.props.clickOnUnderline()}
-          >
-            <u>U</u>
-          </button>
-        </div>
+export default ({ clickOnBold, clickOnItalic, clickOnUnderline }) => {
+  return (
+    <div id="control-panel">
+      <div id="format-actions">
+        <ControlButton text="B" handler={clickOnBold} />
+        <ControlButton text="I" handler={clickOnItalic} />
+        <ControlButton text="U" handler={clickOnUnderline} />
+        <input
+          type="color"
+          onChange={e => {
+            document.execCommand("foreColor", null, e.target.value);
+          }}
+        />
+        <input
+          type="color"
+          onChange={e => {
+            document.execCommand("BackColor", null, e.target.value);
+          }}
+        />
       </div>
-    );
-  }
-}
-
-export default ControlPanel;
+    </div>
+  );
+};
