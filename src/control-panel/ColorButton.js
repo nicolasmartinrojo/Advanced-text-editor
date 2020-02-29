@@ -1,9 +1,12 @@
 import React from "react";
 
-export default ({ text, handler }) => {
+export default ({ handler }) => {
   return (
-    <button className="format-action" type="button" onClick={() => handler()}>
-      <b>{text}</b>
-    </button>
+    <input
+      type="color"
+      onChange={e => {
+        handler(e.target.value);
+      }}
+    />
   );
 };
