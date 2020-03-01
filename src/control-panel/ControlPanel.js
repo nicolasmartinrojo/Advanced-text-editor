@@ -1,7 +1,7 @@
 import React from "react";
 import "./ControlPanel.css";
-import ControlButton from "./ControlButton";
-import ColorButton from "./ColorButton";
+import ControlButton from "./Controls/ControlButton";
+import ColorButton from "./Controls/ColorButton";
 
 export default ({
   clickOnBold,
